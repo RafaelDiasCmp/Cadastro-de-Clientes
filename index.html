@@ -23,15 +23,15 @@
             <form class="row g-3">
                 <div class="col-md-6">
                     <label for="inputName" class="form-label">Nome</label>
-                    <input type="text" class="form-control" id="primaryName">
+                    <input type="text" class="form-control" id="primaryName" required>
                 </div>
                 <div class="col-md-6">
                     <label for="inputName1" class="form-label">Sobrenome</label>
-                    <input type="text" class="form-control" id="secondaryName">
+                    <input type="text" class="form-control" id="secondaryName" required>
                 </div>
                 <div class="col-4">
-                    <label for="inputAddress" class="form-label">Pesquise pelo CEP:</label>
-                    <input type="text" class="form-control" id="cep">
+                    <label for="inpuCep" class="form-label">Pesquise pelo CEP:</label>
+                    <input type="text" class="form-control" id="cep" required>
                 </div>
 
                 <div class="row g-3">
@@ -56,7 +56,7 @@
                         <input disabled type="number" class="form-control" id="cep">
                     </div>
                     <div class="col-12 text-center">
-                        <button onclick="save()" type="submit" class="btn btn-primary">Salvar</button>
+                        <button onclick="search()" type="button" class="btn btn-primary">Salvar</button>
                     </div>
                 </div>
             </form>
@@ -98,12 +98,16 @@
         integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
         crossorigin="anonymous"></script>
 
-    <script src="JS/jquery-1.2.6.pack.js"></script>
-    <script src="JS/jquery.maskedinput-1.1.4.pack.js"></script>
-    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="js/jquery.mask.min.js"></script>
+
     <script src="JS/script.js"></script>
-    <script src="https://viacep.com.br/ws/01001000/json/"></script>
-    
+
+    <script>
+        $("#cep").mask("99999-999");
+    </script>
+
+
 </body>
 
 

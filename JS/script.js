@@ -2,6 +2,20 @@ $("#cep").mask("99999-999");
 
 var cliente = [];
 
+function search() {
+
+    var cep = document.getElementById("cep").value;
+
+    var url = `https://viacep.com.br/ws/${cep}/json/`
+
+
+    $.getJSON(url, (response) => {
+
+        console.log(response);
+    });
+}
+
+
 function save() {
     var infoCliente = {
 
