@@ -1,3 +1,5 @@
+$("#cep").mask("99999-999");
+
 var cliente = [];
 
 function save() {
