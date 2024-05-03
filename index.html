@@ -37,26 +37,26 @@
                 <div class="row g-3">
                     <div class="col-9">
                         <label for="inputAddress2" class="form-label">Endereço:</label>
-                        <input type="text" class="form-control" id="address">
+                        <input disabled type="text" class="form-control" id="address">
                     </div>
                     <div class="col-md-3">
                         <label for="inputCity" class="form-label">Número:</label>
-                        <input type="number" class="form-control" id="numberHouse">
+                        <input disabled type="number" class="form-control" id="numberHouse">
                     </div>
                     <div class="col-md-6">
                         <label for="inputState" class="form-label">Bairro:</label>
-                        <input type="text" class="form-control" id="neighborhood">
+                        <input disabled type="text" class="form-control" id="neighborhood">
                     </div>
                     <div class="col-md-6">
                         <label for="inputCity" class="form-label">Cidade:</label>
-                        <input type="text" class="form-control" id="city">
+                        <input disabled type="text" class="form-control" id="city">
                     </div>
                     <div class="col-md-2">
                         <label for="inputAddress" class="form-label">Estado:</label>
-                        <input type="number" class="form-control" id="cep">
+                        <input disabled type="number" class="form-control" id="cep">
                     </div>
                     <div class="col-12 text-center">
-                        <button type="submit" class="btn btn-primary">Salvar</button>
+                        <button onclick="save()" type="submit" class="btn btn-primary">Salvar</button>
                     </div>
                 </div>
             </form>
@@ -71,7 +71,6 @@
                         <th scope="col">Bairro</th>
                         <th scope="col">Cidade</th>
                         <th scope="col">Estado</th>
-
                     </tr>
                 </thead>
                 <tbody>
@@ -98,6 +97,8 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
         crossorigin="anonymous"></script>
+
+    <script src="JS/script.js"></script>
 </body>
 
 
