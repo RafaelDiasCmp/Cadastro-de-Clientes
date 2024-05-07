@@ -20,18 +20,25 @@
     <main>
         <div class="container shadow rounded pb-3 mt-5">
 
-            <form class="row g-3">
+            <form class="row g-3" id="formCliente">
                 <div class="col-md-6">
                     <label for="inputName" class="form-label">Nome</label>
-                    <input type="text" class="form-control" id="primaryName" required>
+                    <input type="text" class="form-control" id="primaryName">
                 </div>
                 <div class="col-md-6">
                     <label for="inputName1" class="form-label">Sobrenome</label>
-                    <input type="text" class="form-control" id="secondaryName" required>
+                    <input type="text" class="form-control" id="secondaryName">
                 </div>
                 <div class="col-4">
                     <label for="inpuCep" class="form-label">Pesquise pelo CEP:</label>
-                    <input type="text" class="form-control" id="cep" required>
+                    <input type="text" class="form-control" id="cep" onblur="validarCep()" required>
+
+                    <div class="col-6 text-danger" id="error">
+
+                    </div>
+
+
+
                 </div>
 
                 <div class="row g-3">
@@ -41,7 +48,7 @@
                     </div>
                     <div class="col-md-3">
                         <label for="inputNumber" class="form-label">Número:</label>
-                        <input disabled type="number" class="form-control" id="numberHouse">
+                        <input disabled type="number" class="form-control" id="numberHouse" required>
                     </div>
                     <div class="col-md-6">
                         <label for="inputNeighborhood" class="form-label">Bairro:</label>
@@ -53,7 +60,7 @@
                     </div>
                     <div class="col-md-2">
                         <label for="inputAddress" class="form-label">Estado:</label>
-                        <input disabled type="number" class="form-control" id="cep">
+                        <input disabled type="text" class="form-control" id="state">
                     </div>
                     <div class="col-12 text-center">
                         <button onclick="search()" type="button" class="btn btn-primary">Salvar</button>
