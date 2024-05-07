@@ -2,7 +2,7 @@ $("#cep").mask("99999-999");
 
 var cliente = [];
 
-function search() {
+function pesquisarCep(cep) {
 
     var cep = document.getElementById("cep").value;
 
@@ -41,15 +41,33 @@ function save() {
 
 };
     
+    addNewRow(infoCliente);
     cliente.push(infoCliente);
-    console.log(infoCliente);
+    document.getElementById("formCliente").reset();
+    document.getElementById("numberHouse").disabled = true;
+}
+
+function addNewRow(infoCliente) {
+
+    var tableBody = document.getElementById("clientesTableBody");
+
+    var newRow = tableBody.insertRow();
+
+    newRow.insertCell().textContent = (infoCliente.id);
+    newRow.insertCell().textContent = (infoCliente.primaryName + " " + infoCliente.secondaryName);
+    newRow.insertCell().textContent = (infoCliente.address + ", " + infoCliente.number);
+    newRow.insertCell().textContent = (infoCliente.cep);
+    newRow.insertCell().textContent = (infoCliente.neighborhood);
+    newRow.insertCell().textContent = (infoCliente.city);
+    newRow.insertCell().textContent = (infoCliente.state);
+
 }
 
 
 function validarNumero() {
-    numero = document.getElementById("numberHouse").value;
+    var numero = document.getElementById("numberHouse").value;
 
-    if (numero == "") {
+    if (numero === "") {
         mostrarErro("Informe um CEP Válido!");
         preencherDados({});
         document.getElementById("numberHouse").disabled = true;
@@ -71,7 +89,7 @@ function validarCep() {
 
     } else {
         mostrarErro("");
-        pesquisarCEP(cep);
+        pesquisarCep(cep);
     }
 }
 
@@ -86,3 +104,4 @@ function preencherDados(response) {
 function mostrarErro(msg) {
     document.getElementById("error").innerHTML = msg;
 }
+

@@ -20,7 +20,7 @@
     <main>
         <div class="container shadow rounded pb-3 mt-5">
 
-            <form class="row g-3" id="formCliente">
+            <form class="row g-3" id="formCliente" onsubmit="validarNumero(); return false;">
                 <div class="col-md-6">
                     <label for="inputName" class="form-label">Nome</label>
                     <input type="text" class="form-control" id="primaryName">
@@ -31,13 +31,11 @@
                 </div>
                 <div class="col-4">
                     <label for="inpuCep" class="form-label">Pesquise pelo CEP:</label>
-                    <input type="text" class="form-control" id="cep" onblur="validarCep()" required>
+                    <input type="text" class="form-control" id="cep" onblur="pesquisarCep()" required>
 
                     <div class="col-6 text-danger" id="error">
 
                     </div>
-
-
 
                 </div>
 
@@ -48,7 +46,7 @@
                     </div>
                     <div class="col-md-3">
                         <label for="inputNumber" class="form-label">Número:</label>
-                        <input disabled type="number" class="form-control" id="numberHouse" required>
+                        <input disabled type="text" class="form-control" id="numberHouse" required>
                     </div>
                     <div class="col-md-6">
                         <label for="inputNeighborhood" class="form-label">Bairro:</label>
@@ -63,12 +61,12 @@
                         <input disabled type="text" class="form-control" id="state">
                     </div>
                     <div class="col-12 text-center">
-                        <button onclick="search()" type="button" class="btn btn-primary">Salvar</button>
+                        <button type="submit" class="btn btn-primary">Salvar</button>
                     </div>
                 </div>
             </form>
 
-            <table class="table mt-5">
+            <table class="table mt-5" id="clientesTable">
                 <thead>
                     <tr>
                         <th scope="col">#</th>
@@ -80,16 +78,10 @@
                         <th scope="col">Estado</th>
                     </tr>
                 </thead>
-                <tbody>
-                    <tr>
+                
+                <tbody id="clientesTableBody">
 
-                    </tr>
-                    <tr>
-
-                    </tr>
-                    <tr>
-
-                    </tr>
+         
                 </tbody>
             </table>
 
